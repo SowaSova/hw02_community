@@ -2,7 +2,6 @@ from django.shortcuts import get_object_or_404, render
 from .models import Group, Post
 
 
-
 def index(request):
     # Главная страница
     template = 'posts/index.html'
