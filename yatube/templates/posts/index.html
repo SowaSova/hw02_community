@@ -1,36 +1,29 @@
-<!DOCTYPE html> <!-- Используется html 5 версии -->
-<html lang="ru"> <!-- Язык сайта - русский -->
 {% extends 'base.html' %}
 {% block content %}
 
-  <body>
-    <main> 
-      <!-- класс py-5 создает отступы сверху и снизу блока -->
-      <div class="container py-5">     
-        <h1>Последние обновления на сайте</h1>
-        {% for post in posts %}
-        <ul>
-          <li>
-            Автор: {{ post.author.get_full_name }}
-          </li>
-          <li>
-            Дата публикации: {{ post.pub_date|date:"d E Y" }}
-          </li>
-        </ul>
-        <p>{{ post.text }}</p>
-        {% if post.group %}
-        <p>
-          все записи группы:
-          <a href="{% url 'posts:group_list' post.group.slug %}" target = "_blank">Записи группы {{ post.group }}</a>
-        </p>
-        {% endif %}
-        {% if not forloop.last %}
-        <hr>
-        {% endif %}
-        {% endfor %}
-    
-      </article>
-      </div>  
-    </main>
-  </body>
+<title>Последние обновления на сайте</title>
+<h1>Последние обновления на сайте </h1>
+
+{% for post in posts %}
+<ul>
+  <li>
+    Автор: {{ post.author.get_full_name }}
+  </li>
+  <li>
+    Дата публикации: {{ post.pub_date|date:"d E Y" }}
+  </li>
+</ul>
+<p>{{ post.text }}</p>
+{% if post.group %}
+<p>
+  все записи группы:
+  <a href="{% url 'posts:group_list' post.group.slug %}" target = "_blank">Записи группы {{ post.group }}</a>
+</p>
+{% endif %}
+{% if not forloop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+</div>
+
 {% endblock content %}
