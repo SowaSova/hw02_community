@@ -19,8 +19,7 @@ def group_posts(request, slug):
     # Страница группы
     group_template = 'posts/group_list.html'
     group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.select_related(
-        'group').filter(group=group)[:POSTS_ON_PAGE]
+    posts = Post.objects.filter(group=group)[:POSTS_ON_PAGE]
     context = {
         'group': group,
         'posts': posts,

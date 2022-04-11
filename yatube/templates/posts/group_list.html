@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% block content %}
 
 {% block title %} 
 <title> {{ group.title }} </title>
@@ -7,6 +6,7 @@
 <p> {{ group.description }} </p>
 {%endblock%}
 
+{% block content %}
 {% for post in posts %}
 <ul>
   <li>
