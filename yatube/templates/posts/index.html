@@ -5,10 +5,8 @@
 {% endblock title %}
 
 {% block content %}
-<head>
-  <h1>Последние обновления на сайте</h1>
-</head>
-<body>
+<h1>Последние обновления на сайте</h1>
+
 {% for post in posts %}
 <ul>
   <li>
@@ -29,5 +27,5 @@
 <hr>
 {% endif %}
 {% endfor %}
-</body>
+
 {% endblock content %}
