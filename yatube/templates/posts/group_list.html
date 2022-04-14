@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title %} 
-<title> {{ group.title }} </title>
-<h1> {{ group.title }} </h1>
-<p> {{ group.description }} </p>
-{%endblock%}
+{% block title %} {{ group.title }} {% endblock %}
+
+{% block header %}
+{{ group.title }}
+{% endblock header %}
+
+{% block description %}
+{{ group.description }}
+{% endblock description %}
 
 {% block content %}
 {% for post in posts %}
