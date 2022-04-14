@@ -2,15 +2,13 @@
 
 {% block title %} {{ group.title }} {% endblock %}
 
-{% block header %}
-{{ group.title }}
-{% endblock header %}
-
-{% block description %}
-{{ group.description }}
-{% endblock description %}
 
 {% block content %}
+<head>
+  <h1> {{ group.title }} </h1>
+  <p> {{ group.description }} </p>
+</head>
+<body>
 {% for post in posts %}
 <ul>
   <li>
@@ -27,6 +25,6 @@
 <hr>
 {% endif %}
 {% endfor %}
-</div>
+</body>
 
 {%endblock content%}

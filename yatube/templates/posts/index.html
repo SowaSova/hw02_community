@@ -4,11 +4,11 @@
 Главная страница
 {% endblock title %}
 
-{% block header %}
-Последние обновления на сайте
-{% endblock header %}
-
 {% block content %}
+<head>
+  <h1>Последние обновления на сайте</h1>
+</head>
+<body>
 {% for post in posts %}
 <ul>
   <li>
@@ -29,6 +29,5 @@
 <hr>
 {% endif %}
 {% endfor %}
-</div>
-
+</body>
 {% endblock content %}

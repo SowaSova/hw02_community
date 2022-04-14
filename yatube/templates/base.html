@@ -17,10 +17,6 @@
     {% include 'includes/header.html' %}
     <div class="container py-5">
       <main>
-      <h1> {% block header %} Заглавия страниц {% endblock header %} </h1>
-
-      <p> {% block description %} Описание {% endblock description %} </p>
-
       {% block content %} Содержимое страниц {% endblock %}
     </main>
     {% include 'includes/footer.html' %}
